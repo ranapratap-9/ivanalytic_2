@@ -1,5 +1,16 @@
 import requests
+import pandas as pd
+import json
 
 res = requests.get('https://dummyjson.com/products')
 
-print(res.text)
+data = res.text
+
+print(data)
+
+df = pd.read_json(data)
+print(df)
+
+
+#print(res.json())
+
